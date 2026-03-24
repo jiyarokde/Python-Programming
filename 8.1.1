@@ -1,0 +1,28 @@
+n = int(input("dimension: "))
+
+print("first matrix:")
+A = []
+for i in range(n):
+    r = list(map(int, input().split()))
+    A.append(r)
+
+print("second matrix:")
+B = []
+for j in range(n):
+    s = list(map(int, input().split()))
+    B.append(s)
+
+print("Resultant Matrix:")
+R = []
+
+for i in range(n):
+    row = []
+    for j in range(n):
+        sum = 0
+        for k in range(n):
+            sum += A[i][k] * B[k][j]
+        row.append(sum)
+    R.append(row)
+
+for row in R:
+    print(*row)
